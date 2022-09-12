@@ -1,0 +1,19 @@
+@use '../../assets/variables' as v;
+
+.route-list-filter {
+  padding: 1rem;
+  background-color: v.$light-color;
+}
+
+@media only screen and (max-width: 1020px) {
+  .route-list-filter {
+    padding: 0 2rem;
+  }
+}
+
+
+@media only screen and (max-width: 425px) {
+  .route-list-filter {
+    padding: 0 0.5rem;
+  }
+}

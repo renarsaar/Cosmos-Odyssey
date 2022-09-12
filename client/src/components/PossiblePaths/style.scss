@@ -1,0 +1,35 @@
+@use '../../assets/variables' as v;
+
+.possible-paths {
+  display: flex;
+  flex-direction: column;
+
+  .path-list {
+    margin: 2rem 0;
+    padding: 0.5rem 0.75rem;
+
+    .possible-path {
+      margin-top: .5rem;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h5 {
+        margin: .75rem 0 0 0;
+      }
+    }
+  }
+
+  .create-reservation {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .possible-paths .create-reservation {
+    margin-bottom: 4rem;
+  }
+}

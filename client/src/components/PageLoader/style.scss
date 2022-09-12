@@ -1,0 +1,30 @@
+.pageLoader {
+  // width: 100%;
+  // padding: 200px 0;
+  // text-align: center;
+}
+
+.fullscreen {
+  width: 100%;
+  padding: 200px 0;
+  text-align: center;
+
+  svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.element {
+  // width: 100%;
+  // padding: 200px 0;
+  // text-align: center;
+  display: inline;
+  width: 35px;
+  height: 35px;
+
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+}

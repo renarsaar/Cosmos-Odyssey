@@ -1,0 +1,17 @@
+@use '../../assets/variables' as v;
+
+.provider-list {
+  position: relative;
+  margin-bottom: 6rem;
+
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.provider-item {
+  padding: .65rem;
+  margin: 1.5rem 0;
+  border: 2px solid v.$dark-color;
+  border-radius: 4px;
+}

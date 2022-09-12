@@ -1,0 +1,12 @@
+@use '../../assets/variables' as v;
+
+.suggestion {
+  padding: 0.5rem;
+
+  &.active,
+  &:hover {
+    background-color: v.$dark-color;
+    color: v.$light-color;
+    cursor: pointer;
+  }
+}

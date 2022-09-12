@@ -1,0 +1,26 @@
+@use '../../assets/variables' as v;
+
+.tip {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #f5a100;
+  background-color: rgba($color: #fffa80, $alpha: .3);
+  border-radius: 4px;
+  margin: .75rem 0;
+  padding: .3rem;
+  font-size: 1.1rem;
+
+  img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(10deg);
+    margin-left: .5rem;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 0.4rem;
+    border: 1px solid v.$dark-color;
+    border-radius: 2px;
+  }
+}

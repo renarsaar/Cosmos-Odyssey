@@ -1,0 +1,22 @@
+@use '../../assets/variables' as v;
+
+.path {
+  .planet {
+    display: inline;
+    border-bottom: 4px solid v.$blue-color;
+
+    i {
+      margin: 0 .35rem;
+    }
+
+    &:last-of-type i {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .path .planet {
+    font-size: 1.4rem;
+  }
+}

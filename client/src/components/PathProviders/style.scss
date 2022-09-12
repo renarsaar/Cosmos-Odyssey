@@ -1,0 +1,16 @@
+@use '../../assets/variables' as v;
+
+.path-providers {
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .path-providers {
+    margin-left: 0;
+  }
+}

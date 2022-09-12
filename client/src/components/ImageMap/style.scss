@@ -1,0 +1,15 @@
+.image-map {
+  margin-top: 1rem;
+
+  .map {
+    position: relative;
+    user-select: none;
+  }
+}
+
+
+@media only screen and (max-width: 1150px) {
+  .image-map {
+    display: none;
+  }
+}

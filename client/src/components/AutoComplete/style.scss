@@ -1,0 +1,31 @@
+@use '../../assets/variables' as v;
+
+.auto-complete {
+  position: relative;
+  width: 100%;
+
+  .suggestions {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    border: 1px solid v.$dark-color;
+    border-radius: 4px;
+    margin-top: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+  }
+}
+
+
+@media only screen and (max-width: 1080px) {}
+
+@media only screen and (max-width: 1020px) {
+  .auto-complete input {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,41 @@
+.create-reservation-form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 5rem;
+
+  .form-group {
+    margin-bottom: 2rem;
+
+    input {
+      width: 300px;
+    }
+
+    p {
+      color: red;
+    }
+  }
+
+  input[type=submit],
+  .btn {
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    width: 200px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .create-reservation-form {
+    .form-group input {
+      width: 100%;
+    }
+
+    input[type=submit] {
+      width: 100%;
+    }
+  }
+}
