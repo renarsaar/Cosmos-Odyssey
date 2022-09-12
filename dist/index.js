@@ -31,7 +31,7 @@ app.use(priceLists_1.priceListsRouter);
 (0, db_1.connectDb)();
 job_1.storePriceListsJob.invoke();
 app.get("*", (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path_1.default.join(__dirname, "build", "index.html"));
 });
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
