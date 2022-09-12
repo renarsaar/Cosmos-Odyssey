@@ -14,7 +14,9 @@
   "main": "index.ts",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "install-client": "cd client && npm install",
+    "client": "cd client && npm start"
   },
   "engines": {
     "node": "16.13.2"
