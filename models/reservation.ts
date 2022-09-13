@@ -34,8 +34,8 @@ const reservationSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    expires: '4h',
     default: Date.now,
+    index: { expires: '4h' },
   },
 });
 

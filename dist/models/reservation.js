@@ -33,8 +33,8 @@ const reservationSchema = new mongoose_1.default.Schema({
     },
     createdAt: {
         type: Date,
-        expires: '4h',
         default: Date.now,
+        index: { expires: '4h' },
     },
 });
 reservationSchema.statics.build = (attr) => {
