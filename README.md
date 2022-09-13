@@ -1,9 +1,16 @@
-# General Info:
+# Cosmos Odyssey
+
+## Introduction
+Cosmos Odyssey is a web application that shows the best deals for costumers traveling in our solar system. Customers can select between different planets and the system shows possible routes from different companies. After choosing routes ,customers can make a reservation. Customers can filter the routes based on company name and/or sort the result based on price, distance or travel time. Price list of different routes change every 15 minutes and the last 15 active price lists are stored into database.<br/>
+Possible routes between the planets are listed in the image.
+![Solar System](https://i.postimg.cc/wTyrcrb1/solar.png)
+
+## Application
 Project is hosted with [Heroku](https://cosmosodysseyuptime.herokuapp.com/).<br />
 Front-End: React.js<br />
 Back-End: Node.js, Express, MongoDB<br/><br/>
-
-Finding Optimal Paths is done in findAllPossibleRoutes.ts & journeySlice.ts
+![Demo](https://i.postimg.cc/bwbkT0h0/app1.png)
+![Demo](https://i.postimg.cc/HLg5PJYq/app2.png)
 
 ## File Structure:
 ```
