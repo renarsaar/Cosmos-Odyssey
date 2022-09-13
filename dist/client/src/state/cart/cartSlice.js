@@ -1,6 +1,7 @@
 "use strict";
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.selectCartFlights = exports.selectCartPath = exports.selectCart = exports.setCartItem = void 0;
+exports.selectCartFlights = exports.selectCartPath = exports.selectCart = exports.reset = exports.setCartItem = void 0;
 const toolkit_1 = require("@reduxjs/toolkit");
 const initialState = {
     chosenPath: [],
@@ -33,7 +34,7 @@ const cartSlice = (0, toolkit_1.createSlice)({
         reset: () => initialState, // ? Is it needed
     },
 });
-exports.setCartItem = cartSlice.actions.setCartItem;
+_a = cartSlice.actions, exports.setCartItem = _a.setCartItem, exports.reset = _a.reset;
 const selectCart = (state) => state.cart; // ? needed?
 exports.selectCart = selectCart;
 const selectCartPath = (state) => state.cart.chosenPath;

@@ -6,7 +6,7 @@ import { getTravelPrices } from '../../api/TravelPrices';
 import { Route } from '../../interfaces/Route';
 import { showToast } from '../../lib/toast';
 
-interface priceListState {
+interface PriceListState {
   id: string | null,
   validUntil: Date | null,
   legs: Route[],
@@ -18,11 +18,11 @@ const initialState = {
   validUntil: null,
   legs: [],
   status: null,
-} as priceListState;
+} as PriceListState;
 
 export const getPriceList = createAsyncThunk(
   '/getPriceList',
-  async (): Promise<priceListState> => {
+  async (): Promise<PriceListState> => {
     return getTravelPrices().then();
   }
 );
@@ -31,12 +31,12 @@ const priceListSlice = createSlice({
   name: 'priceList',
   initialState,
   reducers: {},
-  extraReducers: (builder: ActionReducerMapBuilder<priceListState>) => {
+  extraReducers: (builder: ActionReducerMapBuilder<PriceListState>) => {
     builder
-      .addCase(getPriceList.pending, (state: priceListState) => {
+      .addCase(getPriceList.pending, (state: PriceListState) => {
         state.status = 'Pending';
       })
-      .addCase(getPriceList.fulfilled, (state: priceListState, action: PayloadAction<priceListState>) => {
+      .addCase(getPriceList.fulfilled, (state: PriceListState, action: PayloadAction<PriceListState>) => {
         state.status = 'Fulfilled';
 
         const { id, validUntil, legs } = action.payload;
@@ -45,7 +45,7 @@ const priceListSlice = createSlice({
         state.validUntil = validUntil;
         state.legs = legs;
       })
-      .addCase(getPriceList.rejected, (state: priceListState, action) => {
+      .addCase(getPriceList.rejected, (state: PriceListState, action) => {
         const error = action.error as AxiosError;
         const status = error.status || '';
         const message = error.message || 'Something went wrong getting the newest price list. Please refresh the page or try again later.';

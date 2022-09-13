@@ -45,7 +45,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { setCartItem } = cartSlice.actions;
+export const { setCartItem, reset } = cartSlice.actions;
 export const selectCart = (state: RootState) => state.cart; // ? needed?
 export const selectCartPath = (state: RootState) => state.cart.chosenPath;
 export const selectCartFlights = (state: RootState) => state.cart.flights;

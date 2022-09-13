@@ -10,7 +10,7 @@ async function getAxios(url: string, params: object = {}): Promise<AxiosResponse
     .then((response) => response.data);
 }
 
-async function postAxios(url: string, body: object): Promise<AxiosResponse> {
+async function postAxios(url: string, body: object) {
   return await axios.post(url, body)
     .then((response) => response.data);
 }

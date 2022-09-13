@@ -24,7 +24,9 @@
     },
     "settings": {
         "import/resolver": {
-            "typescript": {}
+            "typescript": {
+                "semi": "off"
+            }
         }
     }
 }

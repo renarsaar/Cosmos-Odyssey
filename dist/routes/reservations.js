@@ -14,7 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reservationsRouter = void 0;
 const express_1 = __importDefault(require("express"));
+const moment_1 = __importDefault(require("moment"));
 const reservation_1 = require("../models/reservation");
+const priceList_1 = require("../models/priceList");
 const router = express_1.default.Router();
 exports.reservationsRouter = router;
 // @desc    GET All Reservations
@@ -33,15 +35,21 @@ router.get('/api/v1/reservations', (req, res) => __awaiter(void 0, void 0, void 
 // @route   POST /api/v1/reservations
 // @access  public
 router.post('/api/v1/reservations', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { priceListId, firstName, lastName, flights, price, duration, } = req.body;
+    const { priceListId, firstName, lastName, flights, price, duration } = req.body;
+    const latestPriceList = yield priceList_1.PriceList.findOne().sort({ _id: -1 });
+    const currentTime = (0, moment_1.default)().utc();
+    const validUntilDate = (0, moment_1.default)(latestPriceList.validUntil);
+    if (currentTime.isAfter(validUntilDate) || priceListId !== (latestPriceList === null || latestPriceList === void 0 ? void 0 : latestPriceList.id)) {
+        return res.status(400).send('Price list has been updated. Please refresh the page and select new Routes');
+    }
     const reservation = reservation_1.Reservation.build({
         priceListId, firstName, lastName, flights, price, duration,
     });
     try {
         yield reservation.save();
-        return res.status(201).send(reservation);
+        return res.status(201).json({ message: 'Reservation Created Successfully.' });
     }
     catch (error) {
-        return res.status(400).send('Something went wrong. Please try again later');
+        return res.status(500).send('Something went wrong. Please try again.');
     }
 }));

@@ -1,15 +1,15 @@
 import moment from 'moment';
+import { AxiosError } from 'axios';
+import { ToastContainer } from 'react-toastify';
 import { useForm } from 'react-hook-form';
-import { useAppSelector } from '../../../hooks/useRedux';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../../hooks/useRedux';
 import { selectValidUntil } from '../../../state/priceList/priceListSlice';
-
 import { postReservation } from '../../../api/Reservation';
+import { showToast } from '../../../lib/toast';
+
 import { ReservationFlight } from '../../../interfaces/Reservation';
 import './style.scss';
-import { ToastContainer } from 'react-toastify';
-import { showToast } from '../../../lib/toast';
-import { AxiosError } from 'axios';
 
 
 type Props = {
@@ -55,12 +55,27 @@ export default function index({
       price,
     };
 
-    postReservation(reservation)
-      .then((response) => {
-        showToast('success', 'Reservation created successfully', 10000);
-      })
+    type PostReservationResponse = {
+      message: string,
+    };
 
-      .catch((error: AxiosError) => showToast('error', error.message, false));
+    postReservation(reservation)
+      .then((response: PostReservationResponse) => {
+        const { message } = response;
+
+        showToast('success', message, 10000);
+
+        navigate('/', {
+          state: {
+            reservationMessage: message,
+          },
+        })
+      })
+      .catch((error: AxiosError) => {
+        const message = error.response?.data as string;
+
+        showToast('error', message, false)
+      });
   }
 
   return (

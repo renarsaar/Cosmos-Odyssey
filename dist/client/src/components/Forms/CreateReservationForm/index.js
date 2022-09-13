@@ -4,14 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const moment_1 = __importDefault(require("moment"));
+const react_toastify_1 = require("react-toastify");
 const react_hook_form_1 = require("react-hook-form");
-const useRedux_1 = require("../../../hooks/useRedux");
 const react_router_dom_1 = require("react-router-dom");
+const useRedux_1 = require("../../../hooks/useRedux");
 const priceListSlice_1 = require("../../../state/priceList/priceListSlice");
 const Reservation_1 = require("../../../api/Reservation");
-require("./style.scss");
-const react_toastify_1 = require("react-toastify");
 const toast_1 = require("../../../lib/toast");
+require("./style.scss");
 function index({ priceListId, flights, duration, price }) {
     const navigate = (0, react_router_dom_1.useNavigate)();
     const priceListValidUntil = (0, useRedux_1.useAppSelector)(priceListSlice_1.selectValidUntil);
@@ -29,9 +29,19 @@ function index({ priceListId, flights, duration, price }) {
             price });
         (0, Reservation_1.postReservation)(reservation)
             .then((response) => {
-            (0, toast_1.showToast)('success', 'Reservation created successfully', 10000);
+            const { message } = response;
+            (0, toast_1.showToast)('success', message, 10000);
+            navigate('/', {
+                state: {
+                    reservationMessage: message,
+                },
+            });
         })
-            .catch((error) => (0, toast_1.showToast)('error', error.message, false));
+            .catch((error) => {
+            var _a;
+            const message = (_a = error.response) === null || _a === void 0 ? void 0 : _a.data;
+            (0, toast_1.showToast)('error', message, false);
+        });
     }
     return (<form onSubmit={handleSubmit(onSubmit)} className='create-reservation-form'>
       <div className="form-group">
