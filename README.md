@@ -1,7 +1,7 @@
 # Cosmos Odyssey
 
 ## Introduction
-Cosmos Odyssey is a web application that shows the best deals for costumers traveling in our solar system. Customers can select between different planets and the system shows possible routes from different companies. After choosing routes ,customers can make a reservation. Customers can filter the routes based on company name and/or sort the result based on price, distance or travel time. Price list of different routes change every 15 minutes and the last 15 active price lists are stored into database.<br/>
+Cosmos Odyssey is a web application that shows the best deals for costumers traveling in our solar system. Customers can select between different planets and the system shows possible routes from different companies. After choosing routes ,customers can make a reservation. Customers can filter the routes based on company name and/or sort the result based on price, distance or travel time. Price list of different routes change every 15 minutes and the last 15 active price lists are stored into database.<br/><br/>
 Possible routes between the planets are listed in the image.
 ![Solar System](https://i.postimg.cc/wTyrcrb1/solar.png)
 
