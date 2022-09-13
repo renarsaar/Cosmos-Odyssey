@@ -16,6 +16,7 @@ exports.connectDb = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        // Atlas URI as a string instead of process.env.ATLAS_URI for development purposes
         const conn = yield mongoose_1.default.connect('mongodb+srv://rsaaremetscosmos:CbRCzgx8YdEWpl0M@cosmosodyssey.6yqobyz.mongodb.net/?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
