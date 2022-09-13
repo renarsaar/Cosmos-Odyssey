@@ -1,5 +1,5 @@
-import ImageMapArea from '../ImageMapArea';
-import ImageMapTip from '../ImapeMapTip';
+import ImageMapArea from './ImageMapArea';
+import ImageMapTip from './ImapeMapTip';
 
 import './style.scss';
 import solarsystem from '../../assets/images/solarsystem.jpg';
@@ -10,8 +10,8 @@ type planetStylingTypes = {
     height: number,
     top: number,
     left: number,
-  }
-}
+  },
+};
 
 const planetsPositioning: planetStylingTypes = {
   Mercury: {
@@ -61,7 +61,7 @@ const planetsPositioning: planetStylingTypes = {
     height: 54,
     top: 377,
     left: 956,
-  }
+  },
 };
 
 export default function index() {

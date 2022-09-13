@@ -1,6 +1,7 @@
+import Path from '../Path';
+
 import { formatDate } from '../../utils/helpers/formatDate';
 import { numberWithCommas } from '../../utils/helpers/numberWithCommas';
-import Path from '../Path';
 import { ReservationFlight } from '../../interfaces/Reservation';
 import './style.scss';
 

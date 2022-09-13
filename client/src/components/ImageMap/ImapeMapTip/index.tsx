@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import lightBulbSvg from '../../assets/svg/light-bulb.svg';
-
-import './style.scss';
+import lightBulbSvg from '../../../assets/svg/light-bulb.svg';
 
 export default function index() {
   const [showTip, setShowTip] = useState(localStorage.getItem('showTip') || '');

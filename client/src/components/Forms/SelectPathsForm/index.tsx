@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useAppSelector, useAppDispatch } from '../../hooks/useRedux';
+import { useAppSelector, useAppDispatch } from '../../../hooks/useRedux';
 
-import { selectRoutes } from '../../state/priceList/priceListSlice';
-import { findPossiblePaths } from '../../state/journey/journeySlice';
+import { selectRoutes } from '../../../state/priceList/priceListSlice';
+import { findPossiblePaths } from '../../../state/journey/journeySlice';
 
-import { planets } from '../../utils/constants';
+import { planets } from '../../../utils/constants';
 
-import AutoComplete from '../AutoComplete';
+import AutoComplete from '../../AutoComplete';
 import './style.scss';
 
 

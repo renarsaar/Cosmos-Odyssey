@@ -10,7 +10,7 @@ const react_router_dom_1 = require("react-router-dom");
 const cartSlice_1 = require("../../state/cart/cartSlice");
 const priceListSlice_1 = require("../../state/priceList/priceListSlice");
 const Reservation_tsx_1 = __importDefault(require("../../components/Reservation.tsx"));
-const CreateReservationForm_1 = __importDefault(require("../../components/CreateReservationForm"));
+const CreateReservationForm_1 = __importDefault(require("../../components/Forms/CreateReservationForm"));
 const Header_1 = __importDefault(require("../../layouts/Header"));
 const Footer_1 = __importDefault(require("../../layouts/Footer"));
 require("./style.scss");

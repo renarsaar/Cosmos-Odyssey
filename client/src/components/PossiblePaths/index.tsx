@@ -6,7 +6,7 @@ import { selectRoutes } from '../../state/priceList/priceListSlice';
 import { selectCartFlights } from '../../state/cart/cartSlice';
 
 import Path from '../Path';
-import Filters from '../Filters';
+import FiltersForm from '../Forms/FiltersForm';
 import PathProviders from '../PathProviders';
 
 import { numberWithCommas } from '../../utils/helpers/numberWithCommas';
@@ -33,7 +33,7 @@ export default function index() {
         <div className='provider-item'>No upcoming flights found.</div>
       ) : (
         <div className='possible-paths'>
-          <Filters />
+          <FiltersForm />
 
           {possiblePaths?.map((possiblePath, index) => (
             <div key={index} className='path-list'>

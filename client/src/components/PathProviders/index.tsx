@@ -16,7 +16,7 @@ type Props = {
 
 export default function index({ fullPath }: Props) {
   const [priceListExpired, setPriceListExpired] = useState(false);
-  const validUntil = useAppSelector(selectValidUntil)
+  const validUntil = useAppSelector(selectValidUntil);
   const pathsArr: string[][] = [];
 
   fullPath.forEach((planet, index) => {
@@ -38,7 +38,7 @@ export default function index({ fullPath }: Props) {
         if (currentTime.isAfter(validUntilDate)) {
           showToast('warning', 'Price list has been updated. Please refresh the page.', false);
 
-          clearInterval();
+          clearInterval(interval);
           setPriceListExpired(() => true);
         }
       }, 1000);

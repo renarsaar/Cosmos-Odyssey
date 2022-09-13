@@ -8,7 +8,7 @@ const react_1 = require("react");
 const useRedux_1 = require("../../hooks/useRedux");
 const priceListSlice_1 = require("../../state/priceList/priceListSlice");
 const filterSlice_1 = require("../../state/filter/filterSlice");
-const ProviderItem_1 = __importDefault(require("../ProviderItem"));
+const ProviderItem_1 = __importDefault(require("./ProviderItem"));
 require("./style.scss");
 function index({ index, fullPath, departure, destination }) {
     const routes = (0, useRedux_1.useAppSelector)(priceListSlice_1.selectRoutes);

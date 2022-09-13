@@ -31,7 +31,7 @@ function index({ fullPath }) {
                 const validUntilDate = (0, moment_1.default)(validUntil);
                 if (currentTime.isAfter(validUntilDate)) {
                     (0, toast_1.showToast)('warning', 'Price list has been updated. Please refresh the page.', false);
-                    clearInterval();
+                    clearInterval(interval);
                     setPriceListExpired(() => true);
                 }
             }, 1000);

@@ -1,7 +1,7 @@
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import ImageMap from '../../components/ImageMap';
-import SelectPathsForm from '../../components/SelectPathsForm';
+import SelectPathsForm from '../../components/Forms/SelectPathsForm';
 import PossiblePaths from '../../components/PossiblePaths';
 
 import './style.scss';

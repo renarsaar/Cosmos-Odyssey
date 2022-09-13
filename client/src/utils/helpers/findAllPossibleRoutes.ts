@@ -4,12 +4,12 @@ interface Graph {
   [key: string]: {
     [key: string]: number,
   },
-}
+};
 
 type possibleRoute = {
   distance: number | string,
   path: string[],
-}
+};
 
 const solarSystemGraph: Graph = {};
 
@@ -21,7 +21,7 @@ function generateGraph(routes: Route[]) {
 
     const newRoute = {
       [destination]: distance,
-    }
+    };
 
     solarSystemGraph[departure] = { ...solarSystemGraph[departure], ...newRoute };
   });
@@ -39,7 +39,7 @@ function lowestCostNode(
 
     return lowest;
   }, null);
-};
+}
 
 // Function that returns the minimum cost and path to reach Finish
 function dijkstra(graph: Graph, startNodeName: string, endNodeName: string): possibleRoute {
@@ -94,7 +94,7 @@ function dijkstra(graph: Graph, startNodeName: string, endNodeName: string): pos
   };
 
   return results;
-};
+}
 
 function calculatePossibleRoutes(
   departure: string, destination: string, routes: Route[]

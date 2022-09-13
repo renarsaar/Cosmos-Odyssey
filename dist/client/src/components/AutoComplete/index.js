@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const react_router_dom_1 = require("react-router-dom");
-const AutoCompleteList_1 = __importDefault(require("../AutoCompleteList"));
+const AutoCompleteList_1 = __importDefault(require("./AutoCompleteList"));
 require("./style.scss");
 function index({ suggestions, name, value }) {
     const [searchParams, setSearchParams] = (0, react_router_dom_1.useSearchParams)({});
@@ -49,7 +49,6 @@ function index({ suggestions, name, value }) {
         const filteredSuggestions = suggestions.filter((suggestion) => suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1);
         setState(Object.assign(Object.assign({}, state), { filteredSuggestions, showSuggestions: true, userInput: event.currentTarget.value }));
     }
-    ;
     function onClick(event) {
         const userInput = event.currentTarget.innerText;
         setQueryParams(userInput);
@@ -79,7 +78,6 @@ function index({ suggestions, name, value }) {
             setState(Object.assign(Object.assign({}, state), { activeSuggestion: activeSuggestion + 1 }));
         }
     }
-    ;
     return (<div className='auto-complete'>
       <input type="text" name={name} onChange={onChange} onKeyDown={onKeyDown} value={value}/>
 

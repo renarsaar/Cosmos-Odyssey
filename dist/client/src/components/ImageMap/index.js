@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ImageMapArea_1 = __importDefault(require("../ImageMapArea"));
-const ImapeMapTip_1 = __importDefault(require("../ImapeMapTip"));
+const ImageMapArea_1 = __importDefault(require("./ImageMapArea"));
+const ImapeMapTip_1 = __importDefault(require("./ImapeMapTip"));
 require("./style.scss");
 const solarsystem_jpg_1 = __importDefault(require("../../assets/images/solarsystem.jpg"));
 const planetsPositioning = {
@@ -55,7 +55,7 @@ const planetsPositioning = {
         height: 54,
         top: 377,
         left: 956,
-    }
+    },
 };
 function index() {
     return (<div className='image-map'>

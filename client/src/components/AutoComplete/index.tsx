@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 
-import AutoCompleteList from '../AutoCompleteList';
+import AutoCompleteList from './AutoCompleteList';
 import './style.scss';
 
 type Props = {
   suggestions: string[],
   name: 'departure' | 'destination',
   value: string,
-}
+};
 
 type State = {
   activeSuggestion: number,
   filteredSuggestions: string[],
   showSuggestions: boolean,
   userInput: string,
-}
+};
 
 export default function index({ suggestions, name, value }: Props) {
   const [searchParams, setSearchParams] = useSearchParams({});
@@ -48,7 +48,7 @@ export default function index({ suggestions, name, value }: Props) {
       showSuggestions: true,
       userInput: event.currentTarget.value,
     });
-  };
+  }
 
   function onClick(event: React.MouseEvent<HTMLLIElement>) {
     const userInput = event.currentTarget.innerText;
@@ -92,7 +92,7 @@ export default function index({ suggestions, name, value }: Props) {
 
       setState({ ...state, activeSuggestion: activeSuggestion + 1 });
     }
-  };
+  }
 
   return (
     <div className='auto-complete'>

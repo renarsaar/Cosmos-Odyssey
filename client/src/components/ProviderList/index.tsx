@@ -1,13 +1,13 @@
 import moment from 'moment';
 import { useMemo } from 'react';
 import { useAppSelector } from '../../hooks/useRedux';
+
 import { selectRoutes } from '../../state/priceList/priceListSlice';
 import { selectFilter, selectSort } from '../../state/filter/filterSlice';
 
+import ProviderItem from './ProviderItem';
 import { Provider } from '../../interfaces/Provider';
 import { Route } from '../../interfaces/Route';
-
-import ProviderItem from '../ProviderItem';
 import './style.scss';
 
 type Props = {
@@ -15,13 +15,13 @@ type Props = {
   fullPath: string[],
   departure: string,
   destination: string,
-}
+};
 
-export default function index({ index, fullPath, departure, destination }: Props
-) {
+export default function index({ index, fullPath, departure, destination }: Props) {
   const routes: Route[] = useAppSelector(selectRoutes);
   const filter = useAppSelector(selectFilter);
   const sortingValues = useAppSelector(selectSort);
+
   const currentRoute = routes?.find((route) => {
     const { from, to } = route.routeInfo;
 

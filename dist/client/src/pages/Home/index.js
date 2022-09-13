@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Header_1 = __importDefault(require("../../layouts/Header"));
 const Footer_1 = __importDefault(require("../../layouts/Footer"));
 const ImageMap_1 = __importDefault(require("../../components/ImageMap"));
-const SelectPathsForm_1 = __importDefault(require("../../components/SelectPathsForm"));
+const SelectPathsForm_1 = __importDefault(require("../../components/Forms/SelectPathsForm"));
 const PossiblePaths_1 = __importDefault(require("../../components/PossiblePaths"));
 require("./style.scss");
 const react_toastify_1 = require("react-toastify");

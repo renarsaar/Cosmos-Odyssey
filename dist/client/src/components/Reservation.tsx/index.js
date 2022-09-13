@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const Path_1 = __importDefault(require("../Path"));
 const formatDate_1 = require("../../utils/helpers/formatDate");
 const numberWithCommas_1 = require("../../utils/helpers/numberWithCommas");
-const Path_1 = __importDefault(require("../Path"));
 require("./style.scss");
 function index({ path, flights, flightStart, flightEnd, price }) {
     return (<div className='reservations'>

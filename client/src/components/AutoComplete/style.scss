@@ -17,6 +17,17 @@
     width: 100%;
     z-index: 999;
     background-color: #fff;
+
+    .suggestion {
+      padding: 0.5rem;
+
+      &.active,
+      &:hover {
+        background-color: v.$dark-color;
+        color: v.$light-color;
+        cursor: pointer;
+      }
+    }
   }
 }
 

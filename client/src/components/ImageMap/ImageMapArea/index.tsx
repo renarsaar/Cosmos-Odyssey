@@ -1,7 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
 
-import './style.scss';
-
 type Props = {
   planet: string,
   height: number,

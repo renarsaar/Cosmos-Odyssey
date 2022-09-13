@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import { setProviders, selectProviders } from '../../state/providers/providersSlice';
-import { selectRoutes } from '../../state/priceList/priceListSlice';
-import { sortPossiblePaths } from '../../state/journey/journeySlice';
-import { setFilters } from '../../state/filter/filterSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
+import { setProviders, selectProviders } from '../../../state/providers/providersSlice';
+import { selectRoutes } from '../../../state/priceList/priceListSlice';
+import { sortPossiblePaths } from '../../../state/journey/journeySlice';
+import { setFilters } from '../../../state/filter/filterSlice';
 
 import Select from '../Select';
-import { routesSortOptions } from '../../utils/constants';
+import { routesSortOptions } from '../../../utils/constants';
 import './style.scss';
 
 type SortOptions = {

@@ -10,7 +10,7 @@ const journeySlice_1 = require("../../state/journey/journeySlice");
 const priceListSlice_1 = require("../../state/priceList/priceListSlice");
 const cartSlice_1 = require("../../state/cart/cartSlice");
 const Path_1 = __importDefault(require("../Path"));
-const Filters_1 = __importDefault(require("../Filters"));
+const FiltersForm_1 = __importDefault(require("../Forms/FiltersForm"));
 const PathProviders_1 = __importDefault(require("../PathProviders"));
 const numberWithCommas_1 = require("../../utils/helpers/numberWithCommas");
 require("./style.scss");
@@ -28,7 +28,7 @@ function index() {
     }, []);
     return (showPaths === true && possiblePaths.length === 0
         ? (<div className='provider-item'>No upcoming flights found.</div>) : (<div className='possible-paths'>
-          <Filters_1.default />
+          <FiltersForm_1.default />
 
           {possiblePaths === null || possiblePaths === void 0 ? void 0 : possiblePaths.map((possiblePath, index) => (<div key={index} className='path-list'>
               <div className='possible-path' key={index}>

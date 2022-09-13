@@ -1,9 +1,49 @@
+@use '../../assets/variables' as v;
+
 .image-map {
   margin-top: 1rem;
 
   .map {
     position: relative;
     user-select: none;
+
+    .area {
+      cursor: pointer;
+      position: absolute;
+      background: rgba($color: #fff, $alpha: 0.6);
+      border: 6px solid #fff;
+      border-radius: 50px;
+
+      &:hover {
+        box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.8);
+        background: rgba($color: #fff, $alpha: 0.8);
+      }
+    }
+  }
+
+  .tip {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #f5a100;
+    background-color: rgba($color: #fffa80, $alpha: .3);
+    border-radius: 4px;
+    margin: .75rem 0;
+    padding: .3rem;
+    font-size: 1.1rem;
+
+    img {
+      width: 20px;
+      height: 20px;
+      transform: rotate(10deg);
+      margin-left: .5rem;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 0.4rem;
+      border: 1px solid v.$dark-color;
+      border-radius: 2px;
+    }
   }
 }
 

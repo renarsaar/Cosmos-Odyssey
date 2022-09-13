@@ -6,7 +6,7 @@ import { selectCartPath, selectCartFlights } from '../../state/cart/cartSlice';
 import { selectPriceListId } from '../../state/priceList/priceListSlice';
 
 import Reservation from '../../components/Reservation.tsx';
-import CreateReservationForm from '../../components/CreateReservationForm';
+import CreateReservationForm from '../../components/Forms/CreateReservationForm';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import './style.scss';

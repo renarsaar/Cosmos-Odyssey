@@ -1,14 +1,14 @@
 import moment from 'moment';
 import { useForm } from 'react-hook-form';
-import { useAppSelector } from '../../hooks/useRedux';
+import { useAppSelector } from '../../../hooks/useRedux';
 import { Link, useNavigate } from 'react-router-dom';
-import { selectValidUntil } from '../../state/priceList/priceListSlice';
+import { selectValidUntil } from '../../../state/priceList/priceListSlice';
 
-import { postReservation } from '../../api/Reservation';
-import { ReservationFlight } from '../../interfaces/Reservation';
+import { postReservation } from '../../../api/Reservation';
+import { ReservationFlight } from '../../../interfaces/Reservation';
 import './style.scss';
 import { ToastContainer } from 'react-toastify';
-import { showToast } from '../../lib/toast';
+import { showToast } from '../../../lib/toast';
 import { AxiosError } from 'axios';
 
 

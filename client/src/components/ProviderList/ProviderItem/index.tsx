@@ -1,9 +1,8 @@
-import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import { setCartItem, selectCartPath, selectCartFlights } from '../../state/cart/cartSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
+import { setCartItem, selectCartPath, selectCartFlights } from '../../../state/cart/cartSlice';
 
-import { formatDate } from '../../utils/helpers/formatDate';
-import { Provider } from '../../interfaces/Provider';
-import './style.scss';
+import { formatDate } from '../../../utils/helpers/formatDate';
+import { Provider } from '../../../interfaces/Provider';
 
 type Props = {
   index: number,
@@ -14,9 +13,7 @@ type Props = {
   routeId: string | undefined,
 };
 
-export default function index({
-  index, fullPath, provider, departure, destination, routeId,
-}: Props) {
+export default function index({ index, fullPath, provider, departure, destination, routeId }: Props) {
   const dispatch = useAppDispatch();
   const chosenPath = useAppSelector(selectCartPath);
   const chosenFlights = useAppSelector(selectCartFlights);

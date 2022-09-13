@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.calculatePossibleRoutes = void 0;
+;
 const solarSystemGraph = {};
 function generateGraph(routes) {
     routes.forEach((route) => {
@@ -23,7 +24,6 @@ function lowestCostNode(costs, processed) {
         return lowest;
     }, null);
 }
-;
 // Function that returns the minimum cost and path to reach Finish
 function dijkstra(graph, startNodeName, endNodeName) {
     // Track the lowest cost to reach each node
@@ -66,7 +66,6 @@ function dijkstra(graph, startNodeName, endNodeName) {
     };
     return results;
 }
-;
 function calculatePossibleRoutes(departure, destination, routes) {
     generateGraph(routes);
     const results = [];
