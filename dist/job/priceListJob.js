@@ -48,17 +48,17 @@ const fetchCurrentPriceList = () => __awaiter(void 0, void 0, void 0, function* 
     return data;
 });
 const storePriceListsJob = schedule.scheduleJob(rule, () => __awaiter(void 0, void 0, void 0, function* () {
-    const latestPriceList = yield fetchCurrentPriceList();
     const priceLists = yield priceList_1.PriceList.find();
+    const latestPriceList = yield fetchCurrentPriceList();
     const oldestPriceListID = priceLists[0]._id;
     if (priceLists.length >= 15) {
         yield priceList_1.PriceList.findByIdAndDelete(oldestPriceListID);
     }
     const newPriceList = priceList_1.PriceList.build(Object.assign({}, latestPriceList));
-    yield newPriceList.save();
-    // const priceListIncludes = await PriceList.find({ id: latestPriceList.id });
-    // if (priceListIncludes.length === 0) {
-    // }
+    const priceListIncludes = yield priceList_1.PriceList.find({ id: latestPriceList.id });
+    if (priceListIncludes.length === 0) {
+        yield newPriceList.save();
+    }
     // 15 Seconds after the update on /TravelPrice server
     const newJobDate = (0, moment_1.default)(latestPriceList.validUntil).add(15, 's')
         .utc().toString();

@@ -3,7 +3,6 @@ import { RequestInfo, RequestInit } from "node-fetch";
 import * as schedule from 'node-schedule';
 
 import { PriceList } from '../models/priceList';
-
 import { IPriceList } from '../interfaces/IPriceList';
 
 const fetch = (url: RequestInfo, init?: RequestInit) => import("node-fetch").then(({ default: fetch }) => fetch(url, init));
@@ -19,18 +18,17 @@ const fetchCurrentPriceList = async (): Promise<IPriceList> => {
 }
 
 const storePriceListsJob = schedule.scheduleJob(rule, async () => {
+  const priceLists = await PriceList.find();
   const latestPriceList: IPriceList = await fetchCurrentPriceList();
-  const allPriceLists = await PriceList.find();
-  const oldestPriceListID: string = allPriceLists[0]._id;
+  const oldestPriceListID: string = priceLists[0]._id;
 
-  if (allPriceLists.length >= 15) {
+  if (priceLists.length >= 15) {
     await PriceList.findByIdAndDelete(oldestPriceListID);
   }
 
   const newPriceList = PriceList.build({ ...latestPriceList });
 
   const priceListIncludes = await PriceList.find({ id: latestPriceList.id });
-
   if (priceListIncludes.length === 0) {
     await newPriceList.save();
   }

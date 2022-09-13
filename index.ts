@@ -7,7 +7,7 @@ import { connectDb } from './db';
 
 import { reservationsRouter } from './routes/reservations';
 import { priceListsRouter } from './routes/priceLists';
-import { storePriceListsJob } from './job/job';
+import { storePriceListsJob } from './job/priceListJob';
 
 config();
 
