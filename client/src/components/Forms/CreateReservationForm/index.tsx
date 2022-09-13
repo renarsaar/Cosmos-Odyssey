@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import moment from 'moment';
 import { AxiosError } from 'axios';
 import { ToastContainer } from 'react-toastify';
@@ -8,9 +9,9 @@ import { selectValidUntil } from '../../../state/priceList/priceListSlice';
 import { postReservation } from '../../../api/Reservation';
 import { showToast } from '../../../lib/toast';
 
+import PageLoader from '../../PageLoader';
 import { ReservationFlight } from '../../../interfaces/Reservation';
 import './style.scss';
-
 
 type Props = {
   priceListId: string,
@@ -26,9 +27,8 @@ type FormData = {
   lastName: string,
 };
 
-export default function index({
-  priceListId, flights, duration, price
-}: Props) {
+export default function index({ priceListId, flights, duration, price }: Props) {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const priceListValidUntil = useAppSelector(selectValidUntil);
   const {
@@ -41,8 +41,12 @@ export default function index({
     const currentTime = moment().utc();
     const validUntilDate = moment(priceListValidUntil);
 
+    setLoading(() => true);
+
     if (currentTime.isAfter(validUntilDate)) {
       showToast('error', 'Price list has been updated. Please refresh the page and select new Routes', false);
+
+      setLoading(() => false);
 
       return;
     }
@@ -75,7 +79,8 @@ export default function index({
         const message = error.response?.data as string;
 
         showToast('error', message, false)
-      });
+      })
+      .finally(() => setLoading(() => false))
   }
 
   return (
@@ -92,7 +97,10 @@ export default function index({
         {errors.lastName && <p>Last name is required.</p>}
       </div>
 
-      <input type="submit" className='btn' value='Create Reservation' />
+      <div className="form-group submit-group">
+        <input type="submit" className='btn' value='Create Reservation' />
+        {loading && <PageLoader type='element' />}
+      </div>
 
       <Link to='/' className='btn'>Cancel</Link>
 

@@ -54,11 +54,11 @@ const journeySlice = createSlice({
         state.possiblePaths = possiblePaths.sort((a, b) => Number(a.distance) < Number(b.distance) ? 1 : -1);
       }
     },
-    reset: () => initialState,
+    resetJourney: () => initialState,
   },
 });
 
-export const { findPossiblePaths, sortPossiblePaths, reset } = journeySlice.actions;
+export const { findPossiblePaths, sortPossiblePaths, resetJourney } = journeySlice.actions;
 export const selectPossiblePaths = (state: RootState) => state.journey.possiblePaths;
 export const selectShowPaths = (state: RootState) => state.journey.showPaths;
 export default journeySlice.reducer;

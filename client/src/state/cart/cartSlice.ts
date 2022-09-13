@@ -41,11 +41,11 @@ const cartSlice = createSlice({
         flights: newFlights,
       };
     },
-    reset: () => initialState, // ? Is it needed
+    resetCart: () => initialState, // ? Is it needed
   },
 });
 
-export const { setCartItem, reset } = cartSlice.actions;
+export const { setCartItem, resetCart } = cartSlice.actions;
 export const selectCart = (state: RootState) => state.cart; // ? needed?
 export const selectCartPath = (state: RootState) => state.cart.chosenPath;
 export const selectCartFlights = (state: RootState) => state.cart.flights;

@@ -16,9 +16,16 @@
     }
   }
 
+  .submit-group {
+    margin-left: auto;
+
+    .element {
+      margin-left: 0.5rem;
+    }
+  }
+
   input[type=submit],
   .btn {
-    margin-bottom: 1.5rem;
     margin-left: auto;
     width: 200px;
 

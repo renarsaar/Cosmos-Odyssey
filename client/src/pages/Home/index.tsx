@@ -4,8 +4,9 @@ import { ToastContainer } from 'react-toastify';
 import { showToast } from '../../lib/toast';
 import { useAppDispatch } from '../../hooks/useRedux';
 
-import { reset as resetJourney } from '../../state/journey/journeySlice';
-import { reset as resetCart } from '../../state/cart/cartSlice';
+import { resetJourney } from '../../state/journey/journeySlice';
+import { resetCart } from '../../state/cart/cartSlice';
+import { resetFilters } from '../../state/filter/filterSlice';
 
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
@@ -33,6 +34,7 @@ export default function index() {
 
       dispatch(resetCart());
       dispatch(resetJourney());
+      dispatch(resetFilters());
     }
   }, []);
 

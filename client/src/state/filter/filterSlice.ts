@@ -44,10 +44,11 @@ const filterSlice = createSlice({
           break;
       }
     },
+    resetFilters: () => initialState,
   },
 });
 
-export const { setFilters } = filterSlice.actions;
+export const { setFilters, resetFilters } = filterSlice.actions;
 export const selectFilter = (state: RootState) => state.filter.company;
 export const selectSort = (state: RootState) => state.filter;
 export default filterSlice.reducer;

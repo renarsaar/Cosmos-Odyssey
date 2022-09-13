@@ -6,7 +6,6 @@ import { config } from 'dotenv';
 import { connectDb } from './db';
 
 import { reservationsRouter } from './routes/reservations';
-import { priceListsRouter } from './routes/priceLists';
 import { storePriceListsJob } from './job/priceListJob';
 
 config();
@@ -32,7 +31,6 @@ app.use('/TravelPrices', createProxyMiddleware({
 }));
 
 app.use(reservationsRouter);
-app.use(priceListsRouter);
 
 connectDb();
 
