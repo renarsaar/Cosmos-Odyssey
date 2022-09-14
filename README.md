@@ -6,8 +6,10 @@ Possible routes between the planets are listed in the image.
 ![Solar System](https://i.postimg.cc/wTyrcrb1/solar.png)
 
 ## Application
-Project is hosted with [Heroku](https://cosmosodysseyuptime.herokuapp.com/).<br />
-Front-End: React.js<br />
+Project is hosted with: <br/>
+[Heroku](https://cosmosodysseyuptime.herokuapp.com/).<br/>
+[AWS](http://ec2-204-236-193-126.compute-1.amazonaws.com:8080/).<br /><br/>
+Front-End: React.js<br/>
 Back-End: Node.js, Express, MongoDB<br/><br/>
 ![Demo](https://i.postimg.cc/bwbkT0h0/app1.png)
 ![Demo](https://i.postimg.cc/HLg5PJYq/app2.png)
