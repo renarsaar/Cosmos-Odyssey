@@ -7,7 +7,7 @@ import providersReducer from './providers/providersSlice';
 import cartReducers from './cart/cartSlice';
 
 
-export const store = configureStore({
+export const createStore = () => configureStore({
   reducer: {
     filter: filterReducer,
     priceList: priceListReducer,
@@ -16,6 +16,8 @@ export const store = configureStore({
     cart: cartReducers,
   }
 });
+
+export const store = createStore();
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

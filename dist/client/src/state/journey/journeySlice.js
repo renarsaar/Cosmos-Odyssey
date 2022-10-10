@@ -1,7 +1,7 @@
 "use strict";
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.selectShowPaths = exports.selectPossiblePaths = exports.reset = exports.sortPossiblePaths = exports.findPossiblePaths = void 0;
+exports.selectShowPaths = exports.selectPossiblePaths = exports.resetJourney = exports.sortPossiblePaths = exports.findPossiblePaths = void 0;
 const toolkit_1 = require("@reduxjs/toolkit");
 const findAllPossibleRoutes_1 = require("../../utils/helpers/findAllPossibleRoutes");
 ;
@@ -32,10 +32,10 @@ const journeySlice = (0, toolkit_1.createSlice)({
                 state.possiblePaths = possiblePaths.sort((a, b) => Number(a.distance) < Number(b.distance) ? 1 : -1);
             }
         },
-        reset: () => initialState,
+        resetJourney: () => initialState,
     },
 });
-_a = journeySlice.actions, exports.findPossiblePaths = _a.findPossiblePaths, exports.sortPossiblePaths = _a.sortPossiblePaths, exports.reset = _a.reset;
+_a = journeySlice.actions, exports.findPossiblePaths = _a.findPossiblePaths, exports.sortPossiblePaths = _a.sortPossiblePaths, exports.resetJourney = _a.resetJourney;
 const selectPossiblePaths = (state) => state.journey.possiblePaths;
 exports.selectPossiblePaths = selectPossiblePaths;
 const selectShowPaths = (state) => state.journey.showPaths;

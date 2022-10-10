@@ -12,7 +12,7 @@ function index() {
         setShowTip('false');
     }
     return (<>
-      {showTip !== 'false' && (<div className="tip">
+      {showTip !== 'false' && (<div className="tip" role='tip'>
           <div>
             <b>Tip: </b>
             Clicking on the Planet will set Departure/Destination

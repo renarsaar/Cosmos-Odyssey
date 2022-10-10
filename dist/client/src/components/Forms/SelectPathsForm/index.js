@@ -36,7 +36,7 @@ function index() {
         <AutoComplete_1.default suggestions={constants_1.planets} name='destination' value={destination}/>
       </div>
 
-      <input type="submit" className='btn' value="Find Routes"/>
+      <input type="submit" className='btn' value="Find Routes" role={'find-routes'}/>
     </form>);
 }
 exports.default = index;

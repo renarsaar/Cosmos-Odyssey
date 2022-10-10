@@ -36,9 +36,11 @@ export default function index({ index, fullPath, provider, departure, destinatio
   }
 
   return (
-    <div className={
-      Object.keys(chosenFlights).find((item) => chosenFlights[item].provider === provider) && fullPath === chosenPath ? 'provider-item selected' : 'provider-item'
-    }>
+    <div
+      role={provider.id}
+      className={
+        Object.keys(chosenFlights).find((item) => chosenFlights[item].provider === provider) && fullPath === chosenPath ? 'provider-item selected' : 'provider-item'
+      }>
       <h3>{provider.company.name}</h3>
 
       <p>{formatDate(provider.flightStart)} - {formatDate(provider.flightEnd)}</p>

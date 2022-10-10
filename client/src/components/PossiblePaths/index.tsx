@@ -36,7 +36,7 @@ export default function index() {
           <FiltersForm />
 
           {possiblePaths?.map((possiblePath, index) => (
-            <div key={index} className='path-list'>
+            <div key={index} className='path-list' role={'path-list'}>
               <div className='possible-path' key={index}>
                 <Path path={possiblePath.path} />
                 <h5>{numberWithCommas(+possiblePath.distance)} km</h5>

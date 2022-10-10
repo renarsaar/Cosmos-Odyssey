@@ -45,6 +45,6 @@ export default function index({ planet, height, width, top, left }: Props) {
   }
 
   return (
-    <div className='area' onClick={onClick} style={{ height, width, top, left }} />
+    <div className='area' role={planet} onClick={onClick} style={{ height, width, top, left }} />
   );
 }

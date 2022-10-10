@@ -25,7 +25,6 @@ export default function index() {
   const location = useLocation();
 
   useEffect(() => {
-    console.log(location.state)
     if (location.state !== null) {
       const { reservationMessage } = location.state as LocationState;
 

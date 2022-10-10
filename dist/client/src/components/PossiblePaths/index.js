@@ -30,7 +30,7 @@ function index() {
         ? (<div className='provider-item'>No upcoming flights found.</div>) : (<div className='possible-paths'>
           <FiltersForm_1.default />
 
-          {possiblePaths === null || possiblePaths === void 0 ? void 0 : possiblePaths.map((possiblePath, index) => (<div key={index} className='path-list'>
+          {possiblePaths === null || possiblePaths === void 0 ? void 0 : possiblePaths.map((possiblePath, index) => (<div key={index} className='path-list' role={'path-list'}>
               <div className='possible-path' key={index}>
                 <Path_1.default path={possiblePath.path}/>
                 <h5>{(0, numberWithCommas_1.numberWithCommas)(+possiblePath.distance)} km</h5>

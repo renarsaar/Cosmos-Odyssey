@@ -29,6 +29,6 @@ function index({ planet, height, width, top, left }) {
         }
         setSearchParams(updatedSearchParams.toString());
     }
-    return (<div className='area' onClick={onClick} style={{ height, width, top, left }}/>);
+    return (<div className='area' role={planet} onClick={onClick} style={{ height, width, top, left }}/>);
 }
 exports.default = index;

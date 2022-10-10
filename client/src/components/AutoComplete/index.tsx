@@ -99,6 +99,7 @@ export default function index({ suggestions, name, value }: Props) {
       <input
         type="text"
         name={name}
+        role={name}
         onChange={onChange}
         onKeyDown={onKeyDown}
         value={value}

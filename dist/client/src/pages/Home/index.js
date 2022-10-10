@@ -10,6 +10,7 @@ const toast_1 = require("../../lib/toast");
 const useRedux_1 = require("../../hooks/useRedux");
 const journeySlice_1 = require("../../state/journey/journeySlice");
 const cartSlice_1 = require("../../state/cart/cartSlice");
+const filterSlice_1 = require("../../state/filter/filterSlice");
 const Header_1 = __importDefault(require("../../layouts/Header"));
 const Footer_1 = __importDefault(require("../../layouts/Footer"));
 const ImageMap_1 = __importDefault(require("../../components/ImageMap"));
@@ -20,13 +21,13 @@ function index() {
     const dispatch = (0, useRedux_1.useAppDispatch)();
     const location = (0, react_router_dom_1.useLocation)();
     (0, react_1.useEffect)(() => {
-        console.log(location.state);
         if (location.state !== null) {
             const { reservationMessage } = location.state;
             (0, toast_1.showToast)('success', reservationMessage !== null && reservationMessage !== void 0 ? reservationMessage : '', 10000);
             window.history.replaceState(undefined, document.title);
-            dispatch((0, cartSlice_1.reset)());
-            dispatch((0, journeySlice_1.reset)());
+            dispatch((0, cartSlice_1.resetCart)());
+            dispatch((0, journeySlice_1.resetJourney)());
+            dispatch((0, filterSlice_1.resetFilters)());
         }
     }, []);
     return (<div className='home'>

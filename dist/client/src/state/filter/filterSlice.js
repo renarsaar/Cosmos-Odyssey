@@ -1,6 +1,7 @@
 "use strict";
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.selectSort = exports.selectFilter = exports.setFilters = void 0;
+exports.selectSort = exports.selectFilter = exports.resetFilters = exports.setFilters = void 0;
 const toolkit_1 = require("@reduxjs/toolkit");
 ;
 const initialState = {
@@ -32,9 +33,10 @@ const filterSlice = (0, toolkit_1.createSlice)({
                     break;
             }
         },
+        resetFilters: () => initialState,
     },
 });
-exports.setFilters = filterSlice.actions.setFilters;
+_a = filterSlice.actions, exports.setFilters = _a.setFilters, exports.resetFilters = _a.resetFilters;
 const selectFilter = (state) => state.filter.company;
 exports.selectFilter = selectFilter;
 const selectSort = (state) => state.filter;

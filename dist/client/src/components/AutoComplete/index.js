@@ -79,7 +79,7 @@ function index({ suggestions, name, value }) {
         }
     }
     return (<div className='auto-complete'>
-      <input type="text" name={name} onChange={onChange} onKeyDown={onKeyDown} value={value}/>
+      <input type="text" name={name} role={name} onChange={onChange} onKeyDown={onKeyDown} value={value}/>
 
       {state.showSuggestions && state.userInput && (<ul className='suggestions'>
           <AutoCompleteList_1.default filteredSuggestions={state.filteredSuggestions} activeSuggestion={state.activeSuggestion} onClick={onClick}/>

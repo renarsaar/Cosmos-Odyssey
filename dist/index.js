@@ -9,7 +9,6 @@ const http_proxy_middleware_1 = require("http-proxy-middleware");
 const dotenv_1 = require("dotenv");
 const db_1 = require("./db");
 const reservations_1 = require("./routes/reservations");
-const priceLists_1 = require("./routes/priceLists");
 const priceListJob_1 = require("./job/priceListJob");
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
@@ -27,7 +26,6 @@ app.use('/TravelPrices', (0, http_proxy_middleware_1.createProxyMiddleware)({
     changeOrigin: true,
 }));
 app.use(reservations_1.reservationsRouter);
-app.use(priceLists_1.priceListsRouter);
 (0, db_1.connectDb)();
 priceListJob_1.storePriceListsJob.invoke();
 const PORT = process.env.PORT || 8080;

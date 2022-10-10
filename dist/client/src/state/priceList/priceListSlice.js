@@ -13,7 +13,6 @@ exports.selectValidUntil = exports.selectRoutes = exports.selectPriceListId = ex
 const toolkit_1 = require("@reduxjs/toolkit");
 const TravelPrices_1 = require("../../api/TravelPrices");
 const toast_1 = require("../../lib/toast");
-;
 const initialState = {
     id: null,
     validUntil: null,

@@ -21,7 +21,7 @@ function index({ index, fullPath, provider, departure, destination, routeId }) {
         };
         dispatch((0, cartSlice_1.setCartItem)(payload));
     }
-    return (<div className={Object.keys(chosenFlights).find((item) => chosenFlights[item].provider === provider) && fullPath === chosenPath ? 'provider-item selected' : 'provider-item'}>
+    return (<div role={provider.id} className={Object.keys(chosenFlights).find((item) => chosenFlights[item].provider === provider) && fullPath === chosenPath ? 'provider-item selected' : 'provider-item'}>
       <h3>{provider.company.name}</h3>
 
       <p>{(0, formatDate_1.formatDate)(provider.flightStart)} - {(0, formatDate_1.formatDate)(provider.flightEnd)}</p>

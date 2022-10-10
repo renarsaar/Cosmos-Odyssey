@@ -11,7 +11,7 @@ interface PriceListState {
   validUntil: Date | null,
   legs: Route[],
   status?: 'Pending' | 'Fulfilled' | 'Rejected' | null,
-};
+}
 
 const initialState = {
   id: null,
